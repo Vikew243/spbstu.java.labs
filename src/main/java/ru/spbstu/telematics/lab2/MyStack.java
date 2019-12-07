@@ -43,6 +43,7 @@ public class MyStack<T> implements Iterable<T> {
             }
             tempVals[size-1] = newElement;
             vals = tempVals;
+            top = newElement;
         }
     }
 
