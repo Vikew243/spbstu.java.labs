@@ -39,12 +39,12 @@ public class MyStackTest {
         myStack.addElement(4);
         myStack.addElement(5);
         myStack.addElement(6);
-        Object[] arr = new Object[4];
+        Object[] arr = new Object[myStack.capacity];
         int i = 0;
-        for (Object v: myStack) {
+        for (Object v : myStack) {
             arr[i] = v;
             i++;
         }
-        assertEquals(arr.length, myStack.getSize());
+        assertArrayEquals(arr, myStack.vals);
     }
 }

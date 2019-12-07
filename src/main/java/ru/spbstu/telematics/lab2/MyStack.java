@@ -13,12 +13,14 @@ public class MyStack<T> implements Iterable<T> {
         super();
         this.capacity = 5;
         vals = new Object[this.capacity];
+        top = null;
     }
 
     public MyStack(int capacity){
         super();
         this.capacity = capacity;
         vals = new Object[this.capacity];
+        top = null;
     }
 
     public int getSize(){
@@ -50,7 +52,7 @@ public class MyStack<T> implements Iterable<T> {
     public T popTop(){
         T temp = top;
         size--;
-        if(size>=0)
+        if(size>0)
             top = (T) vals[size-1];
         else
             top = null;
@@ -71,7 +73,7 @@ public class MyStack<T> implements Iterable<T> {
 
             @Override
             public boolean hasNext() {
-                return cnt < size-1;
+                return cnt < capacity-1;
             }
 
             @Override
